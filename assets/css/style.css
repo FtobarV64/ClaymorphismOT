@@ -1,3 +1,8 @@
+:root {
+  --bg-color: #2f363e;
+  --txt-color: #fff;
+}
+
 /* 1.- Imports fonts from google fonts: Poppins normal from 200 to 900 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
@@ -15,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #2f363e;
+  background: var(--bg-color);
 }
 
 /* 4.- Style to class .container */
@@ -23,7 +28,7 @@ body {
   position: relative;
   width: 350px;
   min-height: 500px;
-  background: #2f363e;
+  background: var(--bg-color);
   border-radius: 30px;
   padding: 50px;
   box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
@@ -34,29 +39,105 @@ body {
 
 /* 5.- Style to .container h3 */
 .container h3 {
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.em;
+  color: var(--txt-color);
+  font-weight: 700;
+  font-size: 1em;
 }
 
 /* 6.- Style to .container .list */
-.container .list{
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    cursor: pointer;
+.container .list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+/* 11.- Style to .container .list::before */
+.container .list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  background: #1f83f2;
+  border-radius: 22.5px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+/* 12.- Style to .container .list:hover::before */
+.container .list:hover::before {
+  width: 100%;
 }
 
 /* 7.- Style to .container .list .rank */
-.container .list .rank{
+.container .list .rank {
+  position: relative;
+  min-width: 45px;
+  height: 45px;
+  /* background: var(--txt-color); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* 8.- Style to .container .list .rank::before*/
+.container .list .rank::before {
+  content: "";
+  position: absolute;
+  /* top: 7px; */
+  width: 30px;
+  height: 30px;
+  background: var(--bg-color);
+  border-radius: 30px;
+  transform: scale(0); /* hide the effects */
+  transition: 0.5s;
+}
+
+/* 9.- Style to to .container .list:hover .rank::before*/
+.container .list:hover .rank::before {
+  transform: scale(1);
+}
+
+/* 10.- Style to .container .list .rank span */
+.container .list .rank span {
+  position: relative;
+  font-weight: 600;
+  font-size: 1em;
+  color: var(--txt-color);
+  transition: 0.5s;
+}
+
+/* 13.- Style to .container .list .creator */
+.container .list .creator{
     position: relative;
-    min-width: 45px;
-    height: 45px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-margin-right: 10px;
+    line-height: 1.15em;
+}
+
+/* 14.- Style to .container .list .creator h4 */
+.container .list .creator h4{
+    font-weight: 600;
+    color: #bcbcc0;
+    transition: 0.5s;
+}
+
+/* 15.- Style to .container .list .creator p */
+.container .list .creator p{
+    font-weight: 400;
+    color: #95999d;
+    font-size: 0.85em;
+    transition: 0.5s;
+}
+
+/* 16.- Style to .container .list:hover .creator h4,
+.container .list:hover .creator p */
+.container .list:hover .creator h4,
+.container .list:hover .creator p{
+    color: var(--txt-color);
 }
