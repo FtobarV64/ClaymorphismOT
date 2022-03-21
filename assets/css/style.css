@@ -38,3 +38,25 @@ body {
     font-weight: 700;
     font-size: 1.em;
 }
+
+/* 6.- Style to .container .list */
+.container .list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+/* 7.- Style to .container .list .rank */
+.container .list .rank{
+    position: relative;
+    min-width: 45px;
+    height: 45px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+margin-right: 10px;
+}
